@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mygtukas</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vh;
+}
+    #button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 50px;
+    transition: transform 0.5s ease;
+    background-image: linear-gradient(#BC7AF9, #9400FF, #FFA1F5);
+    border-radius: 20px;
+    border: 1px solid;
+    box-shadow: 3px 3px 5px #9500ffda;
+}
+</style>
+<body>
+    <button id="button" >Spausti čia</button>
+
+    <script>
+        const button = document.getElementById('button');
+        let isButtonClicked = false;
+
+        button.addEventListener('click', () => {
+            if (!isButtonClicked) {
+                button.style.transform = 'translate(calc(100vw - 150px), calc(100vh - 100px))';
+                isButtonClicked = true;
+            } else {
+                button.style.transform = 'translate(0, 0)';
+
+                isButtonClicked = false;   
+            }
+        });
+
+    </script>
+</body>
+</html>
